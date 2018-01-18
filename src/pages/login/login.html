@@ -1,0 +1,35 @@
+<ion-content padding id="page7">
+    <h4 id="explore-heading3" style="color:#000000;text-align:center;">
+      Login
+    </h4>
+  <div class="spacer" style="height:100px;" id="login-spacer11"></div>
+  <form id="login-form3" [formGroup]="loginForm" >
+    <ion-list id="login-list6">
+      <ion-item id="login-input1">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input  formControlName="formEmail" type="email" placeholder="email@example.com"></ion-input>
+      </ion-item>
+       <ion-item *ngIf="formEmail.hasError('required') && formEmail.touched">
+      <p> *Email is required</p>
+    </ion-item>
+      <ion-item id="login-input2">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input formControlName="formPassword" type="password" placeholder="*******"></ion-input>
+      </ion-item>
+       <ion-item *ngIf="formPassword.hasError('required') && formPassword.touched">
+      <p> *Password is required</p>
+    </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer10"></div>
+    <button id="login-button6" ion-button color="stable" block (click)="login()">
+      Log in
+    </button>
+    <button id="login-button7" ion-button clear color="positive" block (click)="register()">
+      Or create an account
+    </button>
+  </form>
+</ion-content>

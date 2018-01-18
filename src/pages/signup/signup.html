@@ -1,0 +1,39 @@
+<ion-content padding id="page8">
+  <form [formGroup]="formgroup" id="signup-form4">
+    <h1 id="signup-heading4" style="color:#000000;text-align:center;">
+      Register
+    </h1>
+    <ion-list id="signup-list7">
+      <ion-item id="signup-input3">
+        <ion-label>
+          Name
+        </ion-label>
+        <ion-input type="text" formControlName="formname" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formname.hasError('required') && formname.touched">
+      <p> *Name is required</p>
+    </ion-item>
+      <ion-item id="signup-input4">
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" formControlName="formemail" placeholder=""></ion-input>
+      </ion-item>
+     <ion-item *ngIf="formemail.hasError('required') && formemail.touched">
+      <p> *Email is required</p>
+    </ion-item>
+      <ion-item id="signup-input5">
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="text" formControlName="formpassword" placeholder=""></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formpassword.hasError('required') && formpassword.touched">
+      <p> *Password is required</p>
+    </ion-item>
+   </ion-list>
+  </form>
+   <button id="signup-button8" ion-button color="stable"  (click)="dismiss()">
+      Sign up
+    </button>
+</ion-content>
